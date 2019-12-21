@@ -16,9 +16,9 @@ Pod::Spec.new do |spec|
   #
 
   spec.platform              = :ios
-  spec.ios.deployment_target = '10.0'
+  spec.ios.deployment_target = '11.0'
   spec.name                  = "TrashPanda"
-  spec.version               = "0.1.9"
+  spec.version               = "0.1.10"
   spec.summary               = "A Swift lightweight api stack"
   spec.requires_arc          = true
 
@@ -37,7 +37,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/ohassan443/TrashPanda.git", :tag => "#{spec.version}" }
 
-  spec.source_files  =  "TrashPanda/**/*.{swift}"
+  spec.source_files  =  "TrashPanda/TrashPanda/**/*.{swift}"
 
   spec.swift_version = "5"
 end

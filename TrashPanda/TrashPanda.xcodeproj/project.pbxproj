@@ -11,7 +11,6 @@
 		072CF14623ADF4EF000B7205 /* ThreadSafeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072CF14523ADF4EF000B7205 /* ThreadSafeCollection.swift */; };
 		072CF14B23ADFBE6000B7205 /* GeneralActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76BB23AD86FA00F86164 /* GeneralActions.swift */; };
 		072CF14C23ADFBE6000B7205 /* EntityActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76BC23AD86FA00F86164 /* EntityActions.swift */; };
-		072CF14D23ADFBE6000B7205 /* ApiActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76BD23AD86FA00F86164 /* ApiActions.swift */; };
 		072CF14E23ADFBE6000B7205 /* UserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76BE23AD86FA00F86164 /* UserActions.swift */; };
 		074E769423AD86EC00F86164 /* TrashPanda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074E768A23AD86EC00F86164 /* TrashPanda.framework */; };
 		074E769923AD86EC00F86164 /* TrashPandaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E769823AD86EC00F86164 /* TrashPandaTests.swift */; };
@@ -400,7 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072CF14D23ADFBE6000B7205 /* ApiActions.swift in Sources */,
 				072CF14C23ADFBE6000B7205 /* EntityActions.swift in Sources */,
 				072CF14623ADF4EF000B7205 /* ThreadSafeCollection.swift in Sources */,
 				072CF14B23ADFBE6000B7205 /* GeneralActions.swift in Sources */,
