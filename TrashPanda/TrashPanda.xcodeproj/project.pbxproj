@@ -46,6 +46,7 @@
 		074E76E823AD86FA00F86164 /* CodingKeyStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76C923AD86FA00F86164 /* CodingKeyStruct.swift */; };
 		074E76E923AD86FA00F86164 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76CA23AD86FA00F86164 /* Parser.swift */; };
 		0799DF3523AE0DDE00F9A8F5 /* UtilityExtenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0799DF3423AE0DDE00F9A8F5 /* UtilityExtenstions.swift */; };
+		0799DF7323AE258000F9A8F5 /* TrashPandaSpecs.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 0799DF7223AE258000F9A8F5 /* TrashPandaSpecs.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		074E76C923AD86FA00F86164 /* CodingKeyStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodingKeyStruct.swift; sourceTree = "<group>"; };
 		074E76CA23AD86FA00F86164 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		0799DF3423AE0DDE00F9A8F5 /* UtilityExtenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtenstions.swift; sourceTree = "<group>"; };
+		0799DF7223AE258000F9A8F5 /* TrashPandaSpecs.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TrashPandaSpecs.podspec; path = ../../TrashPandaSpecs.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		074E768C23AD86EC00F86164 /* TrashPanda */ = {
 			isa = PBXGroup;
 			children = (
+				0799DF7223AE258000F9A8F5 /* TrashPandaSpecs.podspec */,
 				074E76A423AD86FA00F86164 /* Api */,
 				074E768D23AD86EC00F86164 /* TrashPanda.h */,
 				074E768E23AD86EC00F86164 /* Info.plist */,
@@ -342,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0799DF7323AE258000F9A8F5 /* TrashPandaSpecs.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
