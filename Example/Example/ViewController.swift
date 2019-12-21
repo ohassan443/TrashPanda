@@ -52,7 +52,7 @@ class ViewController: UIViewController {
           
                 let call = ApiCallDetails(requestUrl: Urls.baseUrl.rawValue + Urls.getFoodItemList.rawValue
                     , headers: [:]
-                    , body: nil, action: ActionType.general(.getFoodItemsList)
+                    , body: nil, action: ActionType.defaultCase(.defaultSubAction)
                     , method: .get
                     , authenticationType: .noneRequired
                     , specialErrorMsgs: nil
