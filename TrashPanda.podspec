@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.platform              = :ios
   spec.ios.deployment_target = '10.0'
   spec.name                  = "TrashPanda"
-  spec.version               = "0.1.7"
+  spec.version               = "0.1.9"
   spec.summary               = "A Swift lightweight api stack"
   spec.requires_arc          = true
 

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		072CF13E23AD9215000B7205 /* TrashPanda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072CF13D23AD9215000B7205 /* TrashPanda.framework */; };
-		072CF13F23AD9215000B7205 /* TrashPanda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 072CF13D23AD9215000B7205 /* TrashPanda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		074E76F723AD872B00F86164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76F623AD872B00F86164 /* AppDelegate.swift */; };
 		074E76F923AD872B00F86164 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76F823AD872B00F86164 /* SceneDelegate.swift */; };
 		074E76FB23AD872B00F86164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E76FA23AD872B00F86164 /* ViewController.swift */; };
@@ -17,6 +15,8 @@
 		074E770323AD872B00F86164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 074E770123AD872B00F86164 /* LaunchScreen.storyboard */; };
 		074E770E23AD872C00F86164 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E770D23AD872C00F86164 /* ExampleTests.swift */; };
 		074E771923AD872C00F86164 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E771823AD872C00F86164 /* ExampleUITests.swift */; };
+		07FFF48723AE4C92005EE688 /* TrashPanda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072CF13D23AD9215000B7205 /* TrashPanda.framework */; };
+		07FFF48823AE4C92005EE688 /* TrashPanda.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 072CF13D23AD9215000B7205 /* TrashPanda.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		072CF14023AD9215000B7205 /* Embed Frameworks */ = {
+		07FFF48923AE4C92005EE688 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				072CF13F23AD9215000B7205 /* TrashPanda.framework in Embed Frameworks */,
+				07FFF48823AE4C92005EE688 /* TrashPanda.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072CF13E23AD9215000B7205 /* TrashPanda.framework in Frameworks */,
+				07FFF48723AE4C92005EE688 /* TrashPanda.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +165,7 @@
 				074E76EF23AD872B00F86164 /* Sources */,
 				074E76F023AD872B00F86164 /* Frameworks */,
 				074E76F123AD872B00F86164 /* Resources */,
-				072CF14023AD9215000B7205 /* Embed Frameworks */,
+				07FFF48923AE4C92005EE688 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -401,6 +401,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -454,6 +455,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -465,7 +467,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P98RF6S5R9;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OmarHassan.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -484,7 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P98RF6S5R9;
 				INFOPLIST_FILE = Example/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +494,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.OmarHassan.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
