@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '10.0'
   spec.name                  = "TrashPandaSpecs"
   spec.version               = "0.1.0"
-  spec.summary               = "A Swift lightweight api stack, with no external dependecies"
+  spec.summary               = "A Swift lightweight api stack"
   spec.requires_arc          = true
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  description
+  A siwft side project that handles requesting basic api calls throough callBacks
                    DESC
 
   spec.homepage     = "https://github.com/ohassan443/TrashPandaSpecs"
@@ -83,7 +83,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/ohassan443/RedPanda.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/ohassan443/TrashPandaSpecs", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
