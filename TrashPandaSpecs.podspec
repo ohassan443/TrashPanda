@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.platform              = :ios
   spec.ios.deployment_target = '10.0'
   spec.name                  = "TrashPandaSpecs"
-  spec.version               = "0.1.0"
+  spec.version               = "0.1.1"
   spec.summary               = "A Swift lightweight api stack"
   spec.requires_arc          = true
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
   A siwft side project that handles requesting basic api calls throough callBacks
                    DESC
 
-  spec.homepage     = "https://github.com/ohassan443/TrashPandaSpecs"
+  spec.homepage     = "https://github.com/ohassan443/TrashPanda"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -83,7 +83,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/ohassan443/TrashPandaSpecs", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/ohassan443/TrashPandaSpecs.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -94,8 +94,8 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Classes", "Classes/**/*.{h,m}"
-  spec.exclude_files = "Classes/Exclude"
+  spec.source_files  =  "TrashPanda/**/*.{h,m}"
+  #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
