@@ -13,7 +13,11 @@ import Foundation
 
 class NetworkResponseAdapter {
     
+    private var shouldFetchFromCache : Bool
     
+    init(fetchFromCacheIfAvaliable:Bool) {
+        shouldFetchFromCache = fetchFromCacheIfAvaliable
+    }
     ///   relayes the NetWorkCallExecutor response to the vc Controller the requested the call after trying the parsing closure and if server call fails or parsing fails, then returns appropriate error message
     ///     - in case of success tries parsing the response data to the expected type and if this fails matches the appropriate error msg to the thrown DecodingError or custom Decoding errors @ ErrorBase.Api.ParsingError
     ///     - in case of failure from the server checks wether that api call has specific messages to override server error messages for certain ( errorCode & statusCode ) and if not then returns the server error message
@@ -56,6 +60,13 @@ class NetworkResponseAdapter {
             }
             
         case .fail( let error,let statusCode,let errorCode) :
+            
+            /// if response can be fetched from local cache the successHandler should be executed
+            if let cachedData = callDetails.getFromCache() , shouldFetchFromCache {
+                 successHandler(cachedData,ServerDetailResponse(detail: nil, code: errorCode))
+                 return
+            }
+            
             
             if let statusCode = statusCode , let errorCode = errorCode {
                 let specialMessage = callDetails.call.errorMsgfor(statusCode: statusCode, serverErrorCode: errorCode)

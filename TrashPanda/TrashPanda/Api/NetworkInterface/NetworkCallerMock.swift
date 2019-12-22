@@ -9,27 +9,31 @@
 import Foundation
 
 
-class NetworkCallerMock: NetworkCallerProtocol {
+public class NetworkCallerMock: NetworkCallerProtocol {
     
  
     private let delay    : TimeInterval
     private var onResponse : (_ action:ActionType) -> ServerApiResponse
+    private var networkResponseAdapter : NetworkResponseAdapter
     
-    init(onResponse : @escaping (_ action:ActionType) -> ServerApiResponse ,delay:TimeInterval) {
+    
+    init(onResponse : @escaping (_ action:ActionType) -> ServerApiResponse ,delay:TimeInterval,networkResponseAdapter: NetworkResponseAdapter) {
         self.onResponse       = onResponse
         self.delay          = delay
+        self.networkResponseAdapter = networkResponseAdapter
     }
     
     func set(onResponse: @escaping (_ action:ActionType) -> ServerApiResponse) -> Void {
         self.onResponse = onResponse
     }
-    func makeCall<T>(callDetails:BaseApiCall<T>,successHandler: @escaping successHandlerResponse<T>,failHandler: @ escaping failHandlerResponse) -> Void{
+    public func makeCall<T>(callDetails:BaseApiCall<T>,successHandler: @escaping successHandlerResponse<T>,failHandler: @ escaping failHandlerResponse) -> Void{
         
         
         
         let actionSpecificResponse = self.onResponse(callDetails.call.getAction)
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-                NetworkResponseAdapter().relayResponseToVc(callDetails: callDetails, response: actionSpecificResponse, successHandler: successHandler, failHandler: failHandler)
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: { [weak self] in
+                guard let mock = self else {return}
+                mock.networkResponseAdapter.relayResponseToVc(callDetails: callDetails, response: actionSpecificResponse, successHandler: successHandler, failHandler: failHandler)
             })
         }
 }

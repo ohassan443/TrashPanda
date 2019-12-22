@@ -15,19 +15,21 @@ public class NetworkCallerBuilder {
     private var mockOnResponse : ((ActionType) ->  ServerApiResponse) = {_ in return ServerApiResponse.fail(error: ErrorBase.none, statusCode: nil, errorCode: nil)}
     private var headersFactory : HeadersFactory = HeadersFactory()
     private var urlsessionWrapper : UrlSessionWrapperProtocol = UrlSessionWrapper()
+    private var shouldFetchFromCache = true
     
     // default implementation
     public func defaultImp() -> NetworkCallerProtocol  {
         
         
         let networkCallExecutor         = NetWorkCallExecutor(headersFactory: headersFactory, urlSessionWrapper: urlsessionWrapper)
-        let serverResponseAdapter       = NetworkResponseAdapter()
+        let serverResponseAdapter       = NetworkResponseAdapter(fetchFromCacheIfAvaliable: shouldFetchFromCache)
         
         return NetworkCaller(networkCallExecutor: networkCallExecutor,serverResponseAdapter: serverResponseAdapter)
     }
     
-    func mock() -> NetworkCallerMock{
-        return NetworkCallerMock(onResponse: mockOnResponse, delay: delay)
+     func mock() -> NetworkCallerMock{
+         let serverResponseAdapter       = NetworkResponseAdapter(fetchFromCacheIfAvaliable: shouldFetchFromCache)
+        return NetworkCallerMock(onResponse: mockOnResponse, delay: delay, networkResponseAdapter: serverResponseAdapter)
     }
     
     func with(headersFactory:HeadersFactory) -> NetworkCallerBuilder{
@@ -39,12 +41,16 @@ public class NetworkCallerBuilder {
         return self
     }
     
-    func with(delay:TimeInterval) -> NetworkCallerBuilder {
+    public func with(delay:TimeInterval) -> NetworkCallerBuilder {
         self.delay = delay
         return self
     }
     
-    func with(onResponse:@escaping ((ActionType) ->  ServerApiResponse))-> NetworkCallerBuilder {
+     func with(fetchFromCache:Bool) -> NetworkCallerBuilder {
+        self.shouldFetchFromCache = fetchFromCache
+        return self
+    }
+     func with(onResponse:@escaping ((ActionType) ->  ServerApiResponse))-> NetworkCallerBuilder {
         self.mockOnResponse = onResponse
         return self
     }

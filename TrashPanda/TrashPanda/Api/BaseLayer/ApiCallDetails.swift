@@ -40,8 +40,8 @@ public class ApiCallDetails {
     public var getbody               : [String:Any]?              {return body}
     public var getqueryStrings       : [(String,String)]          {return queryStrings}
     public var getHeaders            : [String:String]            {return headers}
-    public var getmethod             : ApiMethod  	              {return method}
-    public var getAction             : ActionType 	              {return action}
+    public var getmethod             : ApiMethod                    {return method}
+    public var getAction             : ActionType                   {return action}
     public var getAuthenticationType : AuthenticationType         {return authenticationType}
     public var getSpecialErrorMsgs   : [SpecialApiErrorMsg]?      {return specialErrorMsgs}
     public func set(headers          : [String:String]){

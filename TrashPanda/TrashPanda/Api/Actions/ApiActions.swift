@@ -23,7 +23,7 @@ public protocol NestableActions {
 /// - defaultCase: at the func getSubAction() this case is used as a placeholder before exctracting the subActions
 public enum ActionType : CustomStringConvertible{
     
-    case Nestable(ExtendableActions)
+    case Nestable(NestableActions)
 
     
     case defaultCase(defaultSubAction)

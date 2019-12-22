@@ -20,9 +20,9 @@ typealias baseClassCompletionHandler = (_ completionObject : ServerApiResponse) 
  - success: the api call  was successful (associated value is response Data)
  - fail: the api call has failed and as an associated value are parameters that detail the fail reason (associated value is 'error,statusCode,errorCode')
  */
-enum ServerApiResponse {
+ enum ServerApiResponse {
     
-    enum DataType {
+     enum DataType {
         case data(data:Data)
         case any(any:Any)
     }

@@ -195,8 +195,8 @@ public enum UIError : Error , LocalizedError ,UserRespresentableError{
 
 
 
-extension Error {
-    func log(file: String = #file, function: String = #function, line: Int = #line) -> Error {
+public extension Error {
+     func log(file: String = #file, function: String = #function, line: Int = #line) -> Error {
         //print(self.localizedDescription)
         return self
     }
