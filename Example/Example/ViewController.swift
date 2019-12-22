@@ -62,6 +62,8 @@ class ViewController: UIViewController {
                 let getFoodItemsListCall = BaseApiCall<[FoodItemModel]>(call: call, parsingClosure: {
                     data in
                     return  Parser().Decode(decodable: [FoodItemModel].self, data: data,keyedBy: "items")
+                },getFromCache: {
+                    return nil
                 })
         
         return getFoodItemsListCall

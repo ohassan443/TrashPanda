@@ -26,7 +26,7 @@ class NetWorkCallExecutor: NetworkCallExecutorProtocol {
     }
     
     /**
-     ececutes the api call and 
+     ececutes the api call and
     
      - Parameters:
        - callDetails: api call details object that includes url,body,rest method(get/post,...),parsing closure
@@ -39,7 +39,7 @@ class NetWorkCallExecutor: NetworkCallExecutorProtocol {
         let headers = headersFactory.createServiceHeaders(authentication: callDetails.getAuthenticationType)
         switch  headers {
         case .headers(let headers) :
-            callDetails.set(headers: headers) 
+            callDetails.set(headers: headers)
         case .failedToFindAuthToken :
             completionHandler(ServerApiResponse.fail(error: ErrorBase.Api(.apiCallError(.loginRequired)), statusCode: nil, errorCode: nil))
             return
