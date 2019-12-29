@@ -175,7 +175,7 @@ public class Parser {
     ///
     /// - Parameter responseData: server Response Data
     /// - Returns: Result dictionary
-    func parseRequestResponseJson(responseData : Data?) -> [String:Any]? {
+    public func parseRequestResponseJson(responseData : Data?) -> [String:Any]? {
         guard let data = responseData else {return nil}
         return try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]
     }
