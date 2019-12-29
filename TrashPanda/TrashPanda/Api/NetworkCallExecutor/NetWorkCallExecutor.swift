@@ -36,10 +36,10 @@ class NetWorkCallExecutor: NetworkCallExecutorProtocol {
     func execute(callDetails:ApiCallDetails,completionHandler : @escaping baseClassCompletionHandler) -> Void {
         
         
-        let headers = headersFactory.createServiceHeaders(authentication: callDetails.getAuthenticationType)
-        switch  headers {
+        let headersResult = headersFactory.createServiceHeaders(authentication: callDetails.getAuthenticationType)
+        switch  headersResult {
         case .headers(let headers) :
-            callDetails.set(headers: headers)
+            callDetails.add(headers: headers)
         case .failedToFindAuthToken :
             completionHandler(ServerApiResponse.fail(error: ErrorBase.Api(.apiCallError(.loginRequired)), statusCode: nil, errorCode: nil))
             return

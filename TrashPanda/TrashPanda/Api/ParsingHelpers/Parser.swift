@@ -31,19 +31,22 @@ public class Parser {
     public func Decode<T>(decodable: T.Type,data: Data, keyedBy key : String? = nil)  -> ParsingResult<T> where T : Decodable{
       
         guard let key = key else {
-            return  wrapDecodingError(operation: { try JSONDecoder().decode(decodable, from: data) })
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .iso8601
+            return  wrapDecodingError(operation: { try jsonDecoder.decode(decodable, from: data) })
         }
-  
+        
         
         let operationResult : ParsingResult<T> = wrapDecodingError(operation: {
-             // Pass the top level key to the decoder
+            // Pass the top level key to the decoder
             let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
             decoder.userInfo[.jsonDecoderRootKeyName] = key
             
             let root = try decoder.decode(DecodableRoot<T>.self, from: data)
             return root.value
         })
-            
+        
             
         
         if case ParsingResult.fail(let parsingError) = operationResult {

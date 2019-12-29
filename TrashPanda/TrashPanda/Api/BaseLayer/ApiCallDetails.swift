@@ -44,8 +44,10 @@ public class ApiCallDetails {
     public var getAction             : ActionType                   {return action}
     public var getAuthenticationType : AuthenticationType         {return authenticationType}
     public var getSpecialErrorMsgs   : [SpecialApiErrorMsg]?      {return specialErrorMsgs}
-    public func set(headers          : [String:String]){
-        self.headers = headers
+    public func add(headers headersToAdd          : [String:String]){
+        for header in headersToAdd {
+            self.headers[header.key] = header.value
+        }
     }
     public func updateQueryStringAt(index:Int,newValue:String){
         guard queryStrings.count  - 1 <= index else {return}
